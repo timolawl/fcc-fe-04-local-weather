@@ -1,0 +1,99 @@
+$boxHeight: 160px;
+$boxWidth: 300px;
+$primary-color: #1d2330;
+$secondary-color: #DEDEDE;
+
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+
+* {
+  font-family: 'Source Sans Pro';
+  color: $primary-color;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+
+body {
+  background-color: #ADD5F7; // default
+}
+
+.wrapper {
+
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -$boxHeight/2;
+  margin-left: -$boxWidth/2;
+}
+
+.weather {
+  position: relative;
+  text-align: center;
+  width: $boxWidth;
+  height: $boxHeight;
+  padding: 1rem;
+  border: 4px solid $secondary-color; 
+  outline: 4px solid $primary-color;
+  
+  &:after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    border: 4px solid $primary-color;
+  }
+  
+  &__title {
+    font-size: 3rem;
+    font-weight: bold;
+    
+  }
+  
+  &__location {
+    font-size: 1.5rem;
+  }
+  
+  &__desc {
+    
+  }
+  
+  &__icon {
+  //  border: 1px solid red;
+    display: inline-block;
+    vertical-align: bottom;
+  }
+  
+  &__temp {
+    display: inline-block;
+ //   border: 1px solid blue;
+    vertical-align: top;
+    
+    &-number {
+      font-size: 2rem;
+      display: inline-block;
+    }
+    
+    &-scale {
+      display: inline-block;
+      cursor: pointer;
+      vertical-align: super;
+    }
+  }
+}
+
+.show {
+  font-weight: bold;
+}
